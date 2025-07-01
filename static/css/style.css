@@ -1,0 +1,139 @@
+:root {
+    /* Color Palette */
+    --primary-color: #007bff;
+    --primary-color-hover: #0056b3;
+    --text-color-dark: #1a1a1a;
+    --text-color-light: #333;
+    --background-color-page: #f4f4f9;
+    --background-color-container: #fff;
+    --border-color: #ddd;
+    --border-color-dashed: #ccc;
+    --error-color: #d9534f;
+
+    /* Typography */
+    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* Sizing & Spacing */
+    --border-radius: 8px;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--text-color-light);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: var(--background-color-page);
+}
+
+h1, h2 {
+    color: var(--text-color-dark);
+}
+
+.container {
+    background-color: var(--background-color-container);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.upload-form {
+    margin-bottom: 40px;
+    border: 2px dashed var(--border-color-dashed);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+}
+
+.upload-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; 
+}
+
+.upload-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0; 
+}
+
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#file-upload {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #5a6268;
+}
+
+#file-name {
+    color: #555;
+    font-style: italic;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.results-section {
+    margin-top: 40px;
+}
+
+.results {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* --- THE FIX IS HERE --- */
+.image-box {
+    text-align: center;
+    flex: 1; /* Allows the box to grow and shrink as needed */
+    min-width: 300px; /* Ensures the box doesn't get too small before wrapping */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.error {
+    color: var(--error-color);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}

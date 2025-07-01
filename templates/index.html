@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Drone Detection Application</h1>
+            <p>Upload an image containing a drone, and the model will draw bounding boxes around any detections.</p>
+        </header>
+
+        <section class="upload-form">
+            <form action="/" method="post" enctype="multipart/form-data">
+                
+                <!-- The form's content is now wrapped for better control -->
+                <p class="upload-title">Choose an image to upload:</p>
+                
+                <div class="file-upload-wrapper">
+                    <!-- This is the real file input, but it will be hidden by CSS -->
+                    <input type="file" name="file" id="file-upload" accept="image/png, image/jpeg, image/jpg" required>
+                    
+                    <!-- This label is our new, stylish, and perfectly centered button -->
+                    <label for="file-upload" class="custom-file-upload">Select Image</label>
+                    
+                    <!-- This span will display the name of the chosen file -->
+                    <span id="file-name">No file chosen</span>
+                </div>
+
+                <input type="submit" value="Detect Drones">
+            </form>
+        </section>
+
+        <section class="results-section">
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+
+            {% if prediction_filename %}
+                <div class="results">
+                    <div class="image-box">
+                        <h2>Original Image</h2>
+                        <img src="{{ url_for('static', filename='uploads/' + original_filename) }}" alt="Original Image">
+                    </div>
+                    <div class="image-box">
+                        <h2>Prediction</h2>
+                        <img src="{{ url_for('static', filename='predictions/' + prediction_filename) }}" alt="Prediction Image">
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <!-- JavaScript to update the filename display -->
+    <script>
+        const fileInput = document.getElementById('file-upload');
+        const fileNameSpan = document.getElementById('file-name');
+
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                fileNameSpan.textContent = this.files[0].name;
+            } else {
+                fileNameSpan.textContent = 'No file chosen';
+            }
+        });
+    </script>
+</body>
+</html>

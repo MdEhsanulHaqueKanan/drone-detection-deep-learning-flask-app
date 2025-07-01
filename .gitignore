@@ -1,0 +1,20 @@
+# Virtual Environment
+venv/
+dronedetection/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Application-generated files
+static/uploads/
+static/predictions/
+
+# Model files
+*.pth
+*.pt
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
