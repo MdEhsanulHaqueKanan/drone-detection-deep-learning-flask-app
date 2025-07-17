@@ -9,7 +9,7 @@
 
 This project demonstrates an end-to-end workflow for training a drone detection model and deploying it as an interactive web application. The application allows users to upload an image, and it returns the image with bounding boxes drawn around any detected drones.
 
-The core of the project is a **Faster R-CNN** model with a **ResNet-18 FPN backbone**, implemented in PyTorch. The training was conducted on the [Drone Detection Dataset](https://www.kaggle.com/datasets/muki2003/drone-detection) from Kaggle, and the final application is built using the Flask web framework.
+The core of the project is a **Faster R-CNN** model with a **ResNet-18 FPN backbone**, implemented in PyTorch. The training was conducted on the [Drone Detection Dataset](https://www.kaggle.com/datasets/cybersimar08/drone-detection) from Kaggle, and the final application is built using the Flask web framework.
 
 ### Features
 - **Deep Learning Model:** Utilizes a powerful Faster R-CNN architecture for accurate object detection.
@@ -85,7 +85,7 @@ The model's performance was evaluated on an unseen test set. The primary metric 
 
 *(Note: For a production-grade evaluation, the next step would be to calculate the mean Average Precision (mAP) metric, which is the industry standard for object detection.)*
 
-### Qualitative Results & Demo
+### Demo
 
 The application successfully identifies drones in user-uploaded images.
 
@@ -132,7 +132,7 @@ pip install -r requirements.txt
 ### 4. Download the Model Weights
 The trained model file is not included in the Git repository. Download it from the link below and place it in the root directory of the project (`drone_detector_app-flask/`).
 
-**[Download Model (`fasterrcnn_drone_detector.pth`)](https://link-to-your-model-on-gdrive-or-dropbox.com/file)**
+**[Download Model (`fasterrcnn_drone_detector.pth`)](https://drive.google.com/file/d/19ugDaNzKPMGZcXog7xPkrO7L3RUtnEoH/view?usp=sharing)**
 
 Your project root should look like this after downloading:
 ```
