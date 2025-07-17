@@ -19,6 +19,42 @@ The core of the project is a **Faster R-CNN** model with a **ResNet-18 FPN backb
 
 ---
 
+### Demo
+
+The application successfully identifies drones in user-uploaded images.
+
+ <!-- Recommended: Add a screenshot of your running app -->
+_A screenshot of the live application interface._
+![Screenshot of the Drone Detection App Interface](./assets/app_sc_1.png)
+
+---
+
+## Tech Stack
+This project integrates a full stack of technologies, from backend deep learning to frontend web development.
+
+#### Backend (Deep Learning & Data Science)
+*   **Python:** The core programming language for the entire project.
+*   **PyTorch:** The main deep learning framework used to build, train, and run the model.
+*   **torchvision:** Provided the Faster R-CNN model structure, ResNet-18 backbone, and key vision utilities.
+*   **Pillow (PIL):** Used for advanced image manipulation to draw custom bounding boxes and labels.
+*   **Albumentations:** A powerful library used for image augmentation during model training.
+*   **NumPy:** For fundamental scientific computing and numerical operations.
+
+#### Backend (Web Server)
+*   **Flask:** A lightweight Python web framework used to build the web server, handle file uploads, and route requests.
+
+#### Frontend
+*   **HTML5:** The structure and content of the web page.
+*   **CSS3:** All styling, including layout with Flexbox, colors, and fonts.
+*   **JavaScript:** For client-side interactivity to display the selected filename.
+
+#### Development & Environment
+*   **Git & GitHub:** For version control and repository hosting.
+*   **Kaggle Notebooks:** The cloud environment used for model training on an NVIDIA T4 GPU.
+*   **Visual Studio Code:** The code editor for local application development.
+
+---
+
 ## Project Structure
 The repository is organized as follows:
 
@@ -84,14 +120,6 @@ The model's performance was evaluated on an unseen test set. The primary metric 
 | RPN Box Regression Loss      | `[--- 0.0115 ---]`          |
 
 *(Note: For a production-grade evaluation, the next step would be to calculate the mean Average Precision (mAP) metric, which is the industry standard for object detection.)*
-
-### Demo
-
-The application successfully identifies drones in user-uploaded images.
-
- <!-- Recommended: Add a screenshot of your running app -->
-_A screenshot of the live application interface._
-![Screenshot of the Drone Detection App Interface](./assets/app_sc_1.png)
 
 ---
 
