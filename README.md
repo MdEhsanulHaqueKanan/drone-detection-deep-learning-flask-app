@@ -106,20 +106,20 @@ The model was trained on the Kaggle platform with the following key hyperparamet
 | **Learning Rate**         | 0.01                                        |                        
 | **Training Time**         | Approx. 18 minutes per epoch on a Kaggle T4 GPU |
 
+---
+
 ### Quantitative Performance
 The model's performance was evaluated on an unseen test set. The primary metric tracked during training was **loss**, which measures how far the model's predictions are from the ground truth. A lower loss indicates better performance.
 
 **Final Loss on the Test Set:**
 
-| Loss Component               | Final Score                  |
-| ---------------------------- | ---------------------------- |
-| **Total Loss**               | **`[--- 0.1198 ---]`**        |
-| Classifier Loss              | `[--- 0.0512 ---]`          |
-| Bounding Box Regression Loss | `[--- 0.0450 ---]`          |
-| RPN Objectness Loss          | `[--- 0.0121 ---]`          |
-| RPN Box Regression Loss      | `[--- 0.0115 ---]`          |
-
-*(Note: For a production-grade evaluation, the next step would be to calculate the mean Average Precision (mAP) metric, which is the industry standard for object detection.)*
+| Loss Component               | Final Score          |
+| ---------------------------- | -------------------- |
+| **Total Loss**               | **0.0638**           |
+| Classifier Loss              | 0.0156               |
+| Bounding Box Regression Loss | 0.0389               |
+| RPN Objectness Loss          | 0.0008               |
+| RPN Box Regression Loss      | 0.0007               |
 
 ---
 
