@@ -48,6 +48,10 @@ This project was successfully evolved into a modern, decoupled, full-stack appli
 
 The core of the project is a **Faster R-CNN** model with a **ResNet-18 FPN backbone**. The training was conducted on the [Drone Detection Dataset](https://www.kaggle.com/datasets/cybersimar08/drone-detection) from Kaggle.
 
+**Training:** 
+
+This model is not pre-trained. The `fasterrcnn_drone_detector.pth` weights are the result of a complete training process executed from scratch on a Kaggle GPU. This involved writing custom data loaders, implementing the full PyTorch training/validation loop, and evaluating the model. The entire end-to-end process is documented in the [Kaggle Notebook](https://github.com/MdEhsanulHaqueKanan/drone-detection-deep-learning-flask-app/blob/main/notebook/drone%20detection%20kaggle.ipynb) included in this repository.
+
 **Final Loss on the Test Set:**
 
 | Loss Component               | Final Score          |
